@@ -1,3 +1,26 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   font-family: Helvetica, sans-serif, Arial;
+}
+
+:root{
+  --primary-color:#F6F6F6;
+  --secondary-color: #1A4B71;
+  --blue: #306F9F;
+  --light-blue: #90B8D7;
+  --dark-blue: #021D32;
+  --black: #2c2c2c;
+  --gray: #6E6D6D;
+  --off-white: #D4D4D4;
+  --off-white2: #d2d2d2;
+  --white: #DADADA;
+}
+
+body{
+  background-color: var(--primary-color);
 }

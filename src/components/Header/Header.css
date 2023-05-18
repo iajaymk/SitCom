@@ -1,0 +1,9 @@
+.right-border{
+    border-right: 1px solid #c5c5c5;
+}
+
+@media (max-width:992px){
+    .right-border{
+        border:0;
+    }
+}
