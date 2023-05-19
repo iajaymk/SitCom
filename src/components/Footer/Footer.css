@@ -1,0 +1,53 @@
+.footer-container{
+    width: 100%;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-brand{
+    margin-top: 2rem;
+}
+.brand-name{
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+.brand-details{
+    line-height: 2;
+}
+.footer-links-uppersection{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.footer-links-page{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.newsletter-input{
+    background: transparent;
+    border-color: var(--off-white2);
+    border-width: 0px 0px 1px;
+    width: 80%;
+}
+
+@media (max-width:768px){
+    .footer-container{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    .footer-links-uppersection{
+        flex-direction: column-reverse;
+        margin-top: 2rem;
+    }
+    .footer-links-page{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-top: 1rem;
+    }
+    .newsletter-input{
+        width: 80vw;
+    }
+}

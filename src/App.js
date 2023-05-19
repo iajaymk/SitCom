@@ -1,18 +1,23 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Mockman from "mockman-js";
 
+import {Header} from './components/Header/Header';
+import { Footer } from "./components/Footer/Footer";
 import { HomePage } from "./pages";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Header />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
-          <Route path="/mock-api" element={<Mockman colorScheme="dark"/>}></Route>
+          <Route
+            path="/mock-api"
+            element={<Mockman />}
+          ></Route>
         </Routes>
-      </Router>
+        <Footer />
     </div>
   )
 }

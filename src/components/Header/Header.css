@@ -2,6 +2,10 @@
     border-right: 1px solid #c5c5c5;
 }
 
+.container{
+    max-width: 100vw;
+}
+
 @media (max-width:992px){
     .right-border{
         border:0;
