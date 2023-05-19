@@ -13,7 +13,7 @@ export const Header = () => {
             <div className="collapse navbar-collapse" id="navmenu">
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                        <a href="#learn" className="nav-link d-flex align-items-center right-border">
+                        <a className="nav-link d-flex align-items-center right-border">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="16"
@@ -28,7 +28,7 @@ export const Header = () => {
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a href="#instructors" className="nav-link right-border">
+                        <a className="nav-link right-border">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="16"
@@ -43,10 +43,10 @@ export const Header = () => {
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a href="#instructors" className="nav-link right-border">LOGIN</a>
+                        <a className="nav-link right-border">LOGIN</a>
                     </li>
                     <li className="nav-item">
-                        <a href="#instructors" className="nav-link">CART (0)</a>
+                        <a className="nav-link">CART (0)</a>
                     </li>
                 </ul>
             </div>
