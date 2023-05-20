@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/*" element={<PageNotFound />}></Route>
+        <Route path="*" element={<PageNotFound />}></Route>
         <Route path="/mock-api" element={<Mockman />}></Route>
       </Routes>
       <Footer />
