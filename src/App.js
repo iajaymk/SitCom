@@ -5,19 +5,18 @@ import Mockman from "mockman-js";
 import {Header} from './components/Header/Header';
 import { Footer } from "./components/Footer/Footer";
 import { HomePage } from "./pages";
+import { PageNotFound } from "./pages/404Page/PageNotFound";
 
 function App() {
   return (
     <div className="App">
       <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route
-            path="/mock-api"
-            element={<Mockman />}
-          ></Route>
-        </Routes>
-        <Footer />
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/*" element={<PageNotFound />}></Route>
+        <Route path="/mock-api" element={<Mockman />}></Route>
+      </Routes>
+      <Footer />
     </div>
   )
 }

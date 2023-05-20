@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 export const Header = () => {
@@ -6,7 +7,7 @@ export const Header = () => {
       
       <nav className="nav navbar navbar-expand-lg py-3  px-3">
         <div className="container">
-            <div className="navbar-brand fs-3 fw-bold">SIT.CØM</div>
+            <Link className="navbar-brand fs-3 fw-bold" to={'/'}>SIT.CØM</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span className="navbar-toggler-icon"></span>
             </button>
