@@ -1,0 +1,9 @@
+.wishlist-container{
+    min-height: 72vh;
+}
+@media(min-width:768px){
+    .wh-p-container{
+        width: 80%;
+        margin: 0 10%;
+    }
+}

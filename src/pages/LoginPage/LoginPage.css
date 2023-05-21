@@ -1,0 +1,28 @@
+.login-container {
+  margin: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 400px;
+  padding: 3rem;
+}
+.login-component{
+    min-height: 72vh;
+}
+.forgot-pwd {
+  color: var(--secondary-color);
+}
+.login-labels {
+  font-weight: 700;
+}
+.login-container input{
+    padding: 0.4rem;
+}
+@media (min-width:768px){
+    .login-container{
+        margin: auto;
+        width: 450px;
+    }
+}

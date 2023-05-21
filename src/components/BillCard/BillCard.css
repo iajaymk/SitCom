@@ -1,0 +1,19 @@
+.bill-card-container{
+    border: 1px solid var(--gray);
+}
+.bill-card-btns{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width:768px){
+    .bill-card-btns{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .bill-card-container{
+        width: 80%;
+    }
+}

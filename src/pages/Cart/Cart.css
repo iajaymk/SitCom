@@ -1,0 +1,15 @@
+.cart-product-img-container img{
+    width: 100px;
+    margin: 0 10%;
+    height: 100px;
+    border-radius: 10px;
+}
+.product-container{
+    max-height: 40vh;
+}
+.cart-container{
+    min-height: 72vh;
+}
+.cart-items{
+    border-bottom: 1px solid rgb(183, 183, 183);
+}
