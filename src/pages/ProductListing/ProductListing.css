@@ -1,0 +1,18 @@
+.p-container{
+    width: 60%;
+}
+.filter-container{
+    width: 40%;
+}
+.pl-container{
+    min-height: 72vh;
+}
+
+@media (min-width:768px){
+    .p-container{
+        width: 80%;
+    }
+    .filter-container{
+        width: 20%;
+    }    
+}

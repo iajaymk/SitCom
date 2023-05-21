@@ -11,6 +11,7 @@ import { Cart } from "./pages/Cart/Cart";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { Signup } from "./pages/Signup/Signup";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
+import { ProductListing } from "./pages/ProductListing/ProductListing";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
+        <Route path="/products" element={<ProductListing />}></Route>
         <Route path="/product/:id" element={<ProductDetails />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>

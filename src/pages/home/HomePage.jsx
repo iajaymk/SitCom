@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './HomePage.css';
+import { Link } from 'react-router-dom';
 
 export const HomePage = () => {
     const [categories,setCategories] = useState([]);
@@ -30,7 +31,9 @@ export const HomePage = () => {
                   <p>
                     WHERE <span>form</span> MEETS <span>funciton</span>
                   </p>
-                  <button className="all-chairs-button">ALL CHAIRS</button>
+                  <Link to="/products">
+                    <button className="all-chairs-button">ALL CHAIRS</button>
+                  </Link>
                 </div>
               </div>
             </div>

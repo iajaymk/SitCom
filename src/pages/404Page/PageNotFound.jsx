@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./PageNotFound.css";
 
 export const PageNotFound = () => {
@@ -13,9 +14,9 @@ export const PageNotFound = () => {
                     REMOVED OR RENAMED, OR MAYBE THERE WAS A TYPO IN
                     URL.
                 </div>
-                <div className="button-container mt-2">
+                <Link to="/products" className="button-container mt-2">
                     <button className="all-chairs-button">ALL CHAIRS</button>
-                </div>
+                </Link>
             </div>
             <div className="col-md-6 notfound-img-container">
                 <img src={require("../../assets/404-img.jpg")} alt="white-comfort-chair" className="notfound-img"/>
