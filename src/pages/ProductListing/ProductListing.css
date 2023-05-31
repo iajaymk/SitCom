@@ -1,16 +1,21 @@
 .p-container{
     width: 60%;
+        height: 77vh;
+        overflow-y: scroll;
 }
 .filter-container{
     width: 40%;
 }
 .pl-container{
     min-height: 72vh;
+    display: flex;
 }
 
 @media (min-width:768px){
     .p-container{
         width: 80%;
+        height: 70vh;
+        overflow-y: scroll;
     }
     .filter-container{
         width: 20%;

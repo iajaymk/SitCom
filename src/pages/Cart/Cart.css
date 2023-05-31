@@ -5,7 +5,9 @@
     border-radius: 10px;
 }
 .product-container{
-    max-height: 40vh;
+    max-height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .cart-container{
     min-height: 72vh;

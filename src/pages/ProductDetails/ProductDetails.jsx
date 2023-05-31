@@ -1,20 +1,30 @@
+import { useParams } from 'react-router-dom';
 import './ProductDetails.css';
+import { useContext } from 'react';
+import { ProductListingContext } from '../../context/ProductContext';
+import { CartContext } from '../../context/CartContext';
 
 export const ProductDetails = () => {
+    const {id} = useParams();
+    const { products } = useContext(ProductListingContext)
+    const itemDetail = products?.find((item) => String(item._id) === id)
+    const { addToCart } = useContext(CartContext)
+  
+    console.log(id)
   return (
     <div  style={{
         minHeight: "71vh"
       }}>
         <div className="px-4 py-4">
-            <div className="">HOME/ALL CHAIRS/ LOUNGE CHAIRS/ NORTON LOUNGE</div>
+            <div className="">HOME/ALL CHAIRS/ {itemDetail?.categoryName.toUpperCase()}/ {itemDetail?.title.toUpperCase()}</div>
 
             <div className="my-2 pd-view-area">
                 <div className="product-detail-img-container col-md-6 px-5 py-3">
-                    <img src="https://ii2.pepperfry.com/media/catalog/product/m/i/1100x1210/milton-solid-wood-armchair-in-rustic-teak-finish-with-yellow-colour-upholstery-by-woodsworth-milton--tgtdns.jpg" alt="" />
+                    <img src={itemDetail?.image} alt="" />
                 </div>
                 <div className="product-detail-area mt-2 py-3">
                     <div className="d-flex align-items-center justify-content-between">
-                    <div className="pd-name">NORTON LOUNGE</div>
+                    <div className="pd-name">{itemDetail?.title}</div>
 
                         <div>
                             <svg
@@ -30,19 +40,19 @@ export const ProductDetails = () => {
                         </div>
                     </div>
                     <div className="pd-desc-line">
-                        <div className="pd-description col-md-6">
+                        {/* <div className="pd-description col-md-6">
                             LOUNGE CHAIR. ADJUSTABLE
                             SEAT HEIGHT AND TILT.
-                        </div>
-                        <div className="pd-stock col-md-6">IN STOCK NOW</div>
+                        </div> */}
+                        {/* <div className="pd-stock col-md-6">IN STOCK NOW</div> */}
                     </div>
-                    <div className="product-price">$2,500.00</div>
+                    <div className="product-price">Rs.{itemDetail?.price}</div>
                     <div className="pd-button-area mt-3">
                         <div className="">
                             <button className='primary-btn'>BUY NOW</button>
                         </div>
                         <div className="">
-                            <button className='secondary-btn'>ADD TO CART</button>
+                            <button className='secondary-btn' onClick={() => addToCart(itemDetail)}>ADD TO CART</button>
                         </div>
                     </div>
                 </div>
