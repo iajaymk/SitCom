@@ -5,7 +5,9 @@ export const WishListContextProvider = ({ children }) => {
   const [wishList, setWishList] = useState([])
   const addToWishList = (item) => {
     // console.log("Adding to Wishlist", item);
-    setWishList([...wishList, item])
+    if(wishList.findIndex(ele=>ele._id===item._id)===-1){
+      setWishList([...wishList, item])
+    }
   }
 
   const removeItemFromWishList = (id) => {

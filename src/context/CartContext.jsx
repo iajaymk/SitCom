@@ -6,7 +6,9 @@ export const CartContextProvider = ({ children }) => {
 
   const addToCart = (item) => {
     // console.log("Adding", item);
-    setCart([...cart, item])
+    if(cart.findIndex(ele=>ele._id === item._id)===-1){
+      setCart([...cart, item])
+    }
   }
 
   const removeItemFromCart = (id) =>
