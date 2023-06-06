@@ -41,16 +41,20 @@ export const FilterContextProvider = ({children}) => {
                   excludeOutOfStock: !state?.excludeOutOfStock,
                 }
             case 'RATING':
-                console.log('rating',action.payload.value)
+                console.log('rating',action.payload.checked)
                 return{
                     ...state,
                     rating: Number(action.payload.value)
                 }
             case 'RESET':
+                // categories = []
                 return {
                   ...state,
+                  searchInput:'',
                   category: '',
                   productData: data,
+                  excludeOutOfStock:false,
+                  rating:''
                 }
             case 'SEARCH':
                 console.log(action.payload)

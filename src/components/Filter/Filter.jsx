@@ -15,7 +15,7 @@ export const Filter = () => {
                 >RESET ALL</div>
             </div>
             <div className="mt-1 mx-1">
-                <input type="text" placeholder='SEARCH' onInput={(e)=>dispatch({type:'SEARCH',payload:e.target.value})} />
+                <input type="text" placeholder='SEARCH' value={state?.searchInput} onInput={(e)=>dispatch({type:'SEARCH',payload:e.target.value})} />
             </div>
             <div className="accordion-item">
                 <h2 className="accordion-header">
@@ -84,7 +84,9 @@ export const Filter = () => {
                 <div className="accordion-body">
                     <div>
                         <input type="checkbox" id="stock" name="interest" value="outOfStock" 
-                            onClick={(e)=>{dispatch({type:'OUT_OF_STOCK'})}} />
+                            onChange={(e)=>{dispatch({type:'OUT_OF_STOCK'})}}
+                            checked={state?.excludeOutOfStock}
+                            />
                         <label htmlFor="stock"
                         >Exclude out of stock</label>
                     </div>
@@ -101,20 +103,23 @@ export const Filter = () => {
                 <div className="accordion-body">
                     <div>
                     <input type="radio" id="4.5" name="drone" value="4.5"
-                    onClick={(e)=>{dispatch({ type: "RATING" , payload:e.target})}}
+                    onChange={(e)=>{dispatch({ type: "RATING" , payload:e.target})}}
+                    checked={state.rating===4.5}
                             />
                     <label htmlFor="4.5">4.5 & above</label>
                     </div>
 
                     <div>
                     <input type="radio" id="4" name="drone" value="4"
-                    onClick={(e)=>{dispatch({ type: "RATING" , payload:e.target})}}/>
+                    onChange={(e)=>{dispatch({ type: "RATING" , payload:e.target})}}
+                    checked={state.rating===4}/>
                     <label htmlFor="4">4 & above</label>
                     </div>
 
                     <div>
                     <input type="radio" id="3.5" name="drone" value="3.5"
-                    onClick={(e)=>{dispatch({ type: "RATING" , payload:e.target})}}/>
+                    onChange={(e)=>{dispatch({ type: "RATING" , payload:e.target})}}
+                    checked={state.rating===3.5}/>
                     <label htmlFor="3.5">3.5 & above</label>
                     </div>
                 </div>
