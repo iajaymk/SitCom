@@ -52,6 +52,12 @@ export const FilterContextProvider = ({children}) => {
                   category: '',
                   productData: data,
                 }
+            case 'SEARCH':
+                console.log(action.payload)
+                return {
+                  ...state,
+                  searchInput: action.payload,
+                }
             default:
                 return state
         }

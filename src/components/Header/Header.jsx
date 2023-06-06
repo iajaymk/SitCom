@@ -18,7 +18,7 @@ export const Header = () => {
             </button>
             <div className="collapse navbar-collapse" id="navmenu">
                 <ul className="navbar-nav ms-auto">
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <div className="nav-link d-flex align-items-center right-border">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ export const Header = () => {
                             </svg>
                             <span className="ms-1">SEARCH</span>
                         </div>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                         <Link to="/wishlist" className="nav-link right-border">
                             <svg
