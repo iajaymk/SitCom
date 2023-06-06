@@ -7,28 +7,8 @@ import { FilterContext } from '../../context/FilterContext';
 export const ProductListing = () => {
   const {state} = useContext(FilterContext)
   const filteredData = state?.excludeOutOfStock? [...state?.productData].filter(ele=>ele.inStock===true):state?.productData
-  const ratingFiltered = state?.rating==''?filteredData:[...filteredData].filter(ele=>ele?.rating>=state?.rating)
-  const getFilteredData=(state)=>{
-    console.log(state)
-    let data = state
-    if(data?.excludeOutOfStock){
-      data = [...data]?.productData.filter((ele) => ele.inStock === true)
-    }
-    else{
-      data = state
-    }
-    if(data?.rating === ''){
-      data = data
-    }
-    else{
-      console.log(data)
-      data = [...data]?.productData.filter(
-        (ele) => ele?.rating >= filteredData?.rating
-      )
-    }
-    console.log(data)
-    return data
-  }
+  const ratingFiltered = state?.rating===''?filteredData:[...filteredData].filter(ele=>ele?.rating>=state?.rating)
+
   return (
     <div className="pl-container">
       {/* Filter */}
