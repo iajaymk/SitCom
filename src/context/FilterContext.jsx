@@ -7,7 +7,7 @@ export const FilterContext = createContext()
 let data = []
 export const FilterContextProvider = ({children}) => {
     const filterFunction = (state,action) => {
-        switch(action.type){
+        switch(action?.type){
             case "ADD_DATA":
                 data = action.payload
                 console.log(data)
@@ -52,6 +52,8 @@ export const FilterContextProvider = ({children}) => {
                   category: '',
                   productData: data,
                 }
+            default:
+                return state
         }
     }
 
