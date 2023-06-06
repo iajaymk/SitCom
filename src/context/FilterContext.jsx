@@ -40,6 +40,12 @@ export const FilterContextProvider = ({children}) => {
                   ...state,
                   excludeOutOfStock: !state?.excludeOutOfStock,
                 }
+            case 'RATING':
+                console.log('rating',action.payload.value)
+                return{
+                    ...state,
+                    rating: Number(action.payload.value)
+                }
             case 'RESET':
                 return {
                   ...state,

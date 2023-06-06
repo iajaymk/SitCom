@@ -98,17 +98,20 @@ export const Filter = () => {
                 <div className="accordion-body">
                     <div>
                     <input type="radio" id="4.5" name="drone" value="4.5"
+                    onClick={(e)=>{dispatch({ type: "RATING" , payload:e.target})}}
                             />
                     <label htmlFor="4.5">4.5 & above</label>
                     </div>
 
                     <div>
-                    <input type="radio" id="4" name="drone" value="4"/>
+                    <input type="radio" id="4" name="drone" value="4"
+                    onClick={(e)=>{dispatch({ type: "RATING" , payload:e.target})}}/>
                     <label htmlFor="4">4 & above</label>
                     </div>
 
                     <div>
-                    <input type="radio" id="3.5" name="drone" value="3.5"/>
+                    <input type="radio" id="3.5" name="drone" value="3.5"
+                    onClick={(e)=>{dispatch({ type: "RATING" , payload:e.target})}}/>
                     <label htmlFor="3.5">3.5 & above</label>
                     </div>
                 </div>

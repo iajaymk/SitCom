@@ -24,13 +24,20 @@ export const ProductCard = (item) => {
         >
           <div className="p-card-name">{item?.data?.title}</div>
           <div className="p-card-price">Rs.{item?.data?.price}</div>
+          <div className="">
+            Rating :{" "}
+            <span style={{ color: "#e9920c" }}>{item?.data?.rating}</span>
+          </div>
         </Link>
       </div>
       <div className=" d-flex align-items-center justify-content-between p-card-btn-area">
         <button className="primary-btn" onClick={() => addToCart(item?.data)}>
           Add to Cart
         </button>
-        <button className="secondary-btn" onClick={() => addToWishList(item?.data)}>
+        <button
+          className="secondary-btn"
+          onClick={() => addToWishList(item?.data)}
+        >
           Add to Wishlist
         </button>
       </div>
