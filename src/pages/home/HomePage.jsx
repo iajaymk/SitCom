@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './HomePage.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FilterContext } from '../../context/FilterContext';
 
 export const HomePage = () => {
+    const { dispatch } = useContext(FilterContext)
     const [categories,setCategories] = useState([]);
+      const navigate = useNavigate()
     const fetchCategories = async() =>{
         try{
             const response = await fetch("/api/categories");
@@ -16,6 +19,11 @@ export const HomePage = () => {
         catch(e){
             console.log(e);
         }
+    }
+    const handleCategory = (e) => {
+      console.log(e)
+      navigate('/products')
+      dispatch({ type: "CATEGORY", payload: e.target })
     }
 
     useEffect(()=>{fetchCategories()},[])
@@ -101,7 +109,7 @@ export const HomePage = () => {
           <section className="py-3">
             <div className="categories-heading">(All Chairs)</div>
             {categories?.map((ele, index) => (
-              <div key={ele?._id} className="categories-links">
+              <div key={ele?._id} className="categories-links" onClick={()=>handleCategory({target:{value:ele?.categoryName,checked:true}})}>
                 <div className="category-name">
                   {ele?.categoryName.toUpperCase()}
                 </div>

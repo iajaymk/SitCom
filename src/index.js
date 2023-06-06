@@ -7,6 +7,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ProductContext } from "./context/ProductContext";
 import { CartContextProvider } from "./context/CartContext"
 import { WishListContextProvider } from "./context/WishListContext";
+import { FilterContextProvider } from "./context/FilterContext";
+import {AuthContextProvider} from "./context/AuthContext";
 
 // Call make Server
 makeServer();
@@ -15,15 +17,17 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
-  <React.StrictMode>
-    <Router>
-      <ProductContext>
-        <CartContextProvider>
-          <WishListContextProvider>
-            <App />
-          </WishListContextProvider>
-        </CartContextProvider>
-      </ProductContext>
-    </Router>
-  </React.StrictMode>
+  <Router>
+    <AuthContextProvider>
+      <FilterContextProvider>
+        <ProductContext>
+          <CartContextProvider>
+            <WishListContextProvider>
+              <App />
+            </WishListContextProvider>
+          </CartContextProvider>
+        </ProductContext>
+      </FilterContextProvider>
+    </AuthContextProvider>
+  </Router>
 )

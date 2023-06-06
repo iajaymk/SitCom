@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { Filter } from '../../components/Filter/Filter';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
-import { ProductListingContext } from '../../context/ProductContext';
 import './ProductListing.css';
+import { FilterContext } from '../../context/FilterContext';
 
 export const ProductListing = () => {
-  const { products } = useContext(ProductListingContext)
-  
+  const {state} = useContext(FilterContext)
+  const filteredData = state?.excludeOutOfStock? [...state?.productData].filter(ele=>ele.inStock===true):state?.productData
   return (
     <div className='pl-container'>
         {/* Filter */}
@@ -15,7 +15,7 @@ export const ProductListing = () => {
         </div>
         {/* Products */}
         <div className="p-container d-flex m-2 flex-wrap">
-            {products.map((ele)=>(
+            {filteredData?.map((ele)=>(
               <div className="" key={ele?._id}>
                 <ProductCard data={ele} ></ProductCard>
               </div>

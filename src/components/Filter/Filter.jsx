@@ -1,13 +1,18 @@
+import { useContext } from 'react';
 import './Filter.css';
+import { FilterContext } from '../../context/FilterContext';
 
 export const Filter = () => {
+    const {state,dispatch} = useContext(FilterContext)
   return (
     <div>
         <div className="accordion" id="accordionPanelsStayOpenFilter">
             <div className="d-flex align-items-center justify-content-between">
                 <div className='filter-heading my-1'>FILTERS</div>
 
-                <div className='reset-link my-2'>RESET ALL</div>
+                <div className='reset-link my-2'
+                    onClick={(e)=>{dispatch({type:'RESET'})}}
+                >RESET ALL</div>
             </div>
             <div className="accordion-item">
                 <h2 className="accordion-header">
@@ -36,19 +41,31 @@ export const Filter = () => {
                 <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse">
                 <div className="accordion-body">
                     <div>
-                        <input type="checkbox" id="dining" name="interest" value="dining"  />
+                        <input type="checkbox" id="dining" name="interest" value="dining chairs" 
+                            onChange={(e)=>dispatch({type:'CATEGORY',payload:e.target})}
+                            checked={state?.category?.includes('dining chairs')}
+                        />
                         <label htmlFor="dining">Dining Chairs</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="lounge" name="interest" value="lounge" />
+                        <input type="checkbox" id="lounge" name="interest" value="lounge chairs"
+                            onChange={(e)=>dispatch({type:'CATEGORY',payload:e.target})}
+                            checked={state?.category?.includes('lounge chairs')}
+                        />
                         <label htmlFor="lounge">Lounge Chairs</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="office" name="interest" value="office"  />
+                        <input type="checkbox" id="office" name="interest" value="office chairs"
+                            onChange={(e)=>dispatch({type:'CATEGORY',payload:e.target})}
+                            checked={state?.category?.includes('office chairs')}
+                        />
                         <label htmlFor="office">Office Chairs</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="rocking" name="interest" value="rocking" />
+                        <input type="checkbox" id="rocking" name="interest" value="rocking chairs" 
+                        onChange={(e)=>dispatch({type:'CATEGORY',payload:e.target})}
+                            checked={state?.category?.includes('rocking chairs')}
+                        />
                         <label htmlFor="rocking">Rocking Chairs</label>
                     </div>
                 </div>
@@ -63,8 +80,10 @@ export const Filter = () => {
                 <div id="panelsStayOpen-collapseFour" className="accordion-collapse collapse">
                 <div className="accordion-body">
                     <div>
-                        <input type="checkbox" id="stock" name="interest" value="outOfStock"  />
-                        <label htmlFor="stock">Exclude out of stock</label>
+                        <input type="checkbox" id="stock" name="interest" value="outOfStock" 
+                            onClick={(e)=>{dispatch({type:'OUT_OF_STOCK'})}} />
+                        <label htmlFor="stock"
+                        >Exclude out of stock</label>
                     </div>
                 </div>
                 </div>

@@ -12,6 +12,7 @@ export const products = [
     price: 3000,
     image: "https://m.media-amazon.com/images/I/71e9HWZgYDL._AC_UL400_.jpg",
     categoryName: "dining chairs",
+    inStock: false
   },
   {
     _id: uuid(),
@@ -19,6 +20,7 @@ export const products = [
     price: 2000,
     image: "https://m.media-amazon.com/images/I/71uoG6-gcNL._AC_UL400_.jpg",
     categoryName: "dining chairs",
+    inStock: true
   },
   {
     _id: uuid(),
@@ -26,6 +28,7 @@ export const products = [
     price: 3000,
     image: "https://m.media-amazon.com/images/I/71wFlxZmL3L._AC_UL400_.jpg",
     categoryName: "dining chairs",
+    inStock: false
   },
   {
     _id: uuid(),
@@ -33,6 +36,7 @@ export const products = [
     price: 2500,
     image: "https://m.media-amazon.com/images/I/61fwId90HUL._AC_UL400_.jpg",
     categoryName: "dining chairs",
+    inStock: true
   },
   {
     _id: uuid(),
@@ -40,6 +44,7 @@ export const products = [
     price: 8000,
     image: "https://m.media-amazon.com/images/I/513KyY4GRKL._AC_UL400_.jpg",
     categoryName: "lounge chairs",
+    inStock: true
   },
   {
     _id: uuid(),
@@ -47,6 +52,7 @@ export const products = [
     price: 8000,
     image: "https://m.media-amazon.com/images/I/8186oMNJA4L._AC_UL400_.jpg",
     categoryName: "lounge chairs",
+    inStock: true
   },
   {
     _id: uuid(),
@@ -54,6 +60,7 @@ export const products = [
     price: 6800,
     image: "https://m.media-amazon.com/images/I/719zelylHPL._AC_UL400_.jpg",
     categoryName: "office chairs",
+    inStock: false
   },
   {
     _id: uuid(),
@@ -61,6 +68,7 @@ export const products = [
     price: 5800,
     image: "https://m.media-amazon.com/images/I/81yJVI6Za5L._AC_UL400_.jpg",
     categoryName: "office chairs",
+    inStock: true
   },
   {
     _id: uuid(),
@@ -68,6 +76,7 @@ export const products = [
     price: 12800,
     image: "https://m.media-amazon.com/images/I/519k+6Wmj2L._AC_UL400_.jpg",
     categoryName: "rocking chairs",
+    inStock: true
   },
   {
     _id: uuid(),
@@ -75,6 +84,7 @@ export const products = [
     price: 8800,
     image: "https://m.media-amazon.com/images/I/71bXojr71ML._AC_UL400_.jpg",
     categoryName: "rocking chairs",
+    inStock: false
   },
   {
     _id: uuid(),
@@ -82,5 +92,6 @@ export const products = [
     price: 5829,
     image: "https://m.media-amazon.com/images/I/61e3XjYsyiL._AC_UL400_.jpg",
     categoryName: "rocking chairs",
+    inStock: true
   },
 ]

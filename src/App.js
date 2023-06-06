@@ -12,6 +12,7 @@ import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { Signup } from "./pages/Signup/Signup";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
 import { ProductListing } from "./pages/ProductListing/ProductListing";
+import { SecuredRoute } from "./components/SecuredRoute/SecuredRoute";
 
 function App() {
   return (
@@ -21,10 +22,24 @@ function App() {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/products" element={<ProductListing />}></Route>
         <Route path="/product/:id" element={<ProductDetails />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
+        <Route
+          path="/cart"
+          element={
+            <SecuredRoute>
+              <Cart />
+            </SecuredRoute>
+          }
+        ></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/wishlist" element={<Wishlist />}></Route>
+        <Route
+          path="/wishlist"
+          element={
+            <SecuredRoute>
+              <Wishlist />
+            </SecuredRoute>
+          }
+        ></Route>
         <Route path="*" element={<PageNotFound />}></Route>
         <Route path="/mock-api" element={<Mockman />}></Route>
       </Routes>
