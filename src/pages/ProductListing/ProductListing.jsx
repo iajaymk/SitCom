@@ -13,6 +13,7 @@ export const ProductListing = () => {
     // console.log(ele?.title.toLowerCase())
     // console.log(state?.searchInput)
   })
+  const priceFiltered = state?.price===''?searchFiltered:[...searchFiltered].filter(ele=>ele.price<state?.price)
   return (
     <div className="pl-container">
       {/* Filter */}
@@ -21,7 +22,7 @@ export const ProductListing = () => {
       </div>
       {/* Products */}
       <div className="p-container d-flex m-2 flex-wrap">
-        {searchFiltered.map((ele) => (
+        {priceFiltered.map((ele) => (
           <div className="" key={ele?._id}>
             <ProductCard data={ele}></ProductCard>
           </div>

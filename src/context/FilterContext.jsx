@@ -54,7 +54,8 @@ export const FilterContextProvider = ({children}) => {
                   category: '',
                   productData: data,
                   excludeOutOfStock:false,
-                  rating:''
+                  rating:'',
+                  price:''
                 }
             case 'SEARCH':
                 console.log(action.payload)
@@ -62,6 +63,13 @@ export const FilterContextProvider = ({children}) => {
                   ...state,
                   searchInput: action.payload,
                 }
+            case 'PRICE':
+                console.log(action.payload.value)
+                return {
+                    ...state,
+                    price:action.payload.value
+                }
+                break;
             default:
                 return state
         }

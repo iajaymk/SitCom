@@ -25,12 +25,15 @@ export const Filter = () => {
                 </h2>
                 <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show">
                 <div className="accordion-body">
-                    <input type="range" id="price" name="price" list="values" min={10} max={5000} />
+                    <input type="range" id="price" name="price" list="values" min={1500} max={8000} 
+                        onChange={(e)=>dispatch({type:'PRICE',payload:e.target})}
+                        value={state?.price?state?.price:1500}
+                    />
 
                     <datalist id="values">
-                    <option value="10" label="10"></option>
-                    <option value="2500" label="2500"></option>
-                    <option value="5000" label="5000"></option>
+                    <option value="1500" label="1500"></option>
+                    <option value="3500" label="3500"></option>
+                    <option value="8000" label="8000"></option>
                     </datalist>
                 </div>
                 </div>
