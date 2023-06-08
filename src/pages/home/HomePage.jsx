@@ -23,6 +23,7 @@ export const HomePage = () => {
     const handleCategory = (e) => {
       console.log(e)
       navigate('/products')
+      dispatch({type:'RESET'})
       dispatch({ type: "CATEGORY", payload: e.target })
     }
 
@@ -109,7 +110,7 @@ export const HomePage = () => {
           <section className="py-3">
             <div className="categories-heading">(All Chairs)</div>
             {categories?.map((ele, index) => (
-              <div key={ele?._id} className="categories-links" onClick={()=>handleCategory({target:{value:ele?.categoryName,checked:true}})}>
+              <div key={ele?._id} className="categories-links" onClick={(e)=>handleCategory({target:{value:ele?.categoryName,checked:true}})}>
                 <div className="category-name">
                   {ele?.categoryName.toUpperCase()}
                 </div>

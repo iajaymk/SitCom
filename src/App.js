@@ -13,6 +13,7 @@ import { Signup } from "./pages/Signup/Signup";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
 import { ProductListing } from "./pages/ProductListing/ProductListing";
 import { SecuredRoute } from "./components/SecuredRoute/SecuredRoute";
+import { AccountPage } from "./pages/AccountPage/AccountPage"
 
 function App() {
   return (
@@ -25,9 +26,9 @@ function App() {
         <Route
           path="/cart"
           element={
-            <SecuredRoute>
+            // <SecuredRoute>
               <Cart />
-            </SecuredRoute>
+            // </SecuredRoute>
           }
         ></Route>
         <Route path="/login" element={<LoginPage />}></Route>
@@ -35,11 +36,12 @@ function App() {
         <Route
           path="/wishlist"
           element={
-            <SecuredRoute>
+            // <SecuredRoute>
               <Wishlist />
-            </SecuredRoute>
+            // </SecuredRoute>
           }
         ></Route>
+        <Route path="/account" element={<AccountPage />}></Route>
         <Route path="*" element={<PageNotFound />}></Route>
         <Route path="/mock-api" element={<Mockman />}></Route>
       </Routes>

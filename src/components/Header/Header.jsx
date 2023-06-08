@@ -7,6 +7,8 @@ import { useWishListContext } from '../../context/WishListContext';
 export const Header = () => {
     const { cart } = useContext(CartContext)
     const { wishList} = useWishListContext()
+    const userDetails = (JSON.parse(localStorage.getItem('user')))
+    const userName = userDetails?.firstName
   return (
     <div className="Header">
       
@@ -49,7 +51,7 @@ export const Header = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/login" className="nav-link right-border">LOGIN</Link>
+                        <Link to={userName?"/account":"/login"} className="nav-link right-border">{userName ? userName : 'LOGIN'}</Link>
                     </li>
                     <li className="nav-item">
                         <Link to="/cart" className="nav-link">CART ({cart.length})</Link>
